@@ -8,8 +8,8 @@
 @import "mixins";
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 
-$linkColor: $red;
-$linkColorHover: lighten($linkColor, 10%);
+$linkColor: darken($red, 5%);
+$linkColorHover: lighten($linkColor, 15%);
 
 /* global configurations */
 
@@ -33,7 +33,9 @@ body {
 
 a {
   color: $linkColor;
+  @include transitions;
   &:hover {
+  text-decoration: none;
   color: $linkColorHover;
   }
 }
@@ -226,12 +228,7 @@ aside {
   font-weight: bold;
   line-height: 1;
   color: $white;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, .1),
-                0 0 30px rgba(0, 0, 0, .125);
-  -webkit-transition: all ease-in-out 0.2s;
-  -moz-transition: all ease-in-out 0.2s;
-  transition: all ease-in-out 0.2s;
-  transform: scale(1);
+  @include transitions;
   &:hover {
     color: $linkColor;
   }
@@ -358,7 +355,7 @@ th, td {
 td {
   width: 10%;
   &:first-child {
-    width: 50%;
+    width: 55%;
   }
   &:last-child {
     width: 100%;
@@ -371,6 +368,10 @@ td {
 
 .small, table .small {
   font-size: 12px;
+}
+
+table .valign {
+  padding-top: 15px;
 }
 
 /* User Stats  */

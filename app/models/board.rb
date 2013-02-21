@@ -7,4 +7,8 @@ class Board < ActiveRecord::Base
   has_many :comments, through: :topics
 
   validates_presence_of :category_id, :description, :name
+
+  def posts
+    topics.count + comments.count
+  end
 end

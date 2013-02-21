@@ -1,17 +1,24 @@
-<div class="well well-inner">
-  <span class="user"><%= link_to board.name, board_path(board) %></span>
+<tr>
 
-  <div class="categories well-footer">
-    <%= board.description %>
+  <td>
+    <span class="user"><%= link_to board.name, board_path(board) %></span>
+    <div class="categories well-footer small"><%= board.description %></div>
+  </td>
 
+  <td class="center small valign"><%= board.topics.count %></td>
+  <td class="center small valign"><%= board.posts %></td>
+
+  <td class="small">
     <% unless board.topics.empty? %>
-      <div class="hidden-phone pull-right" style="margin-top: -10px;">
-        <span class="user">
-          <%= link_to board.latest_post.user.username, :root %> 
-        </span>
-        <%= time_ago_in_words(board.latest_post.created_at) %> ago.
-      </div>
+      <span class="user">
+        <%= link_to board.latest_post.title %>
+      </span> <br /> 
+        by
+      <span class="user">
+       <%= link_to board.latest_post.user.username, :root %> 
+      </span>
+      <%= time_ago_in_words(board.latest_post.created_at) %> ago.
     <% end %>
+  </td>
 
-  </div>
-</div>
+</tr>

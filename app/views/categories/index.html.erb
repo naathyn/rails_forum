@@ -1,1 +1,15 @@
-<%= render @categories %>
+<% @categories.each do |category| %>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th><%= category.name %></th>
+        <th class="center">Topics</th>
+        <th class="center">Posts</th>
+        <th>Last Post</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render category.boards %>
+    </tbody>
+  </table>
+<% end %>

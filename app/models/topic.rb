@@ -7,4 +7,6 @@ class Topic < ActiveRecord::Base
 
   has_many :comments, dependent: :destroy
   validates_presence_of :board_id, :user_id, :content, :title
+
+  default_scope order: 'updated_at DESC'
 end

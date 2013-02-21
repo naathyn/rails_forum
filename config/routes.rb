@@ -2,7 +2,10 @@ Forum::Application.routes.draw do
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
   resources :boards, :only => :show do
-    resources :topics, :comments, :except => :index
+    resources :topics, :except => :index
+  end
+  resources :topics, :only => :show do
+    resources :comments
   end
 
   root :to => 'categories#index'
