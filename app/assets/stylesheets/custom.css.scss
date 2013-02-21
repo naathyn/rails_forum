@@ -426,6 +426,7 @@ aside {
 }
 
 .well-header {
+  margin-top: 1em;
   border-bottom-width: 0;
   @include well-header;
 }
@@ -435,9 +436,7 @@ aside {
   @include well-bottom;
 }
 
-.well,
-.well-body {
-  cursor: pointer;
+.well {
   background-color: $innerBody;
   border-top-width: 0;
   border-bottom: 1px solid $moduleBorder;
@@ -462,7 +461,10 @@ aside {
 .well-footer {
   font-size: 13px;
   margin-left: 58px;
-  margin-bottom: -12px;
+}
+
+.categories {
+  margin-left: 0px;
 }
 
 .well-footer form {

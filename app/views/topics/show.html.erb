@@ -2,19 +2,14 @@
   "<%= @topic.title %>" started by  
     <%= @topic.user.username %> 
     <%= time_ago_in_words(@topic.created_at) %> ago
-</div>
+  </div>
 
-<div class="well well-inner">
-  <div class="well-inner-header">
+  <div class="well well-inner">
     <%= gravatar_for @topic.user %>
     <span class="content"><%= @topic.content %></span>
   </div>
 
-    <hr>
+  <%= render @topic.comments unless @topic.comments.empty? %>
 
-  <% unless @topic.comments.empty? %>
-    <%= render @topic.comments %>
-  <% end %>
+  <div class="well-bottom">
 </div>
-
-<div class="well-bottom"></div>
