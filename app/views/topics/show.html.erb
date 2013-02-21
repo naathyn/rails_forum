@@ -1,0 +1,20 @@
+<div class="well-header" style="text-align:left;">
+  "<%= @topic.title %>" started by  
+    <%= @topic.user.username %> 
+    <%= time_ago_in_words(@topic.created_at) %> ago
+</div>
+
+<div class="well well-inner">
+  <div class="well-inner-header">
+    <%= gravatar_for @topic.user %>
+    <span class="content"><%= @topic.content %></span>
+  </div>
+
+    <hr>
+
+  <% unless @topic.comments.empty? %>
+    <%= render @topic.comments %>
+  <% end %>
+</div>
+
+<div class="well-bottom"></div>

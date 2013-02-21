@@ -1,0 +1,5 @@
+<% unless @topics.empty? %>
+  <% @topics.each do |topic| %>
+    <%= link_to topic.title, board_topic_path(topic) %> <hr>
+  <% end %>
+<% end %>

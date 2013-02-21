@@ -1,0 +1,16 @@
+<div class="well well-inner">
+  <%= link_to board.name, board_path(board) %> <br />
+
+  <div class="well-footer" style="margin: 0;">
+    <%= board.description %>
+
+    <% unless board.topics.empty? %>
+      <div class="hidden-phone pull-right" style="margin-top: -10px;">
+        <span class="user">
+          <%= link_to board.latest_topic.user.username, :root %> 
+        </span>
+        <%= time_ago_in_words(board.latest_topic.created_at) %> ago.
+      </div>
+    <% end %>
+  </div>
+</div>
