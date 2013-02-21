@@ -1,5 +1,5 @@
 Forum::Application.routes.draw do
-  resources :users, :only => [:new, :create]
+  resources :users
   resources :sessions, :only => [:new, :create, :destroy]
   resources :boards, :only => :show do
     resources :topics, :comments, :except => :index

@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   before_filter :increment_view_count, :only => :show
+  before_filter :signed_in_user, :except => :show
 
   def show
     @board = Board.find(params[:board_id])
