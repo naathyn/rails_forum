@@ -1,7 +1,7 @@
 /*
  * Styles taken from my social app Ampersand
  * https://github.com/naathyn/Ampersand
- * http://rubyrails.herokuapp.com
+ * https://rubyrails.herokuapp.com
 */
 
 @import "bootstrap";
@@ -158,9 +158,9 @@ aside {
   text-shadow: 0px 1px 1px white;
   border-bottom-width: 0;
   min-height: 100%;
-  max-width: 750px;
+  max-width: 880px;
   margin: -1.4em auto;
-  padding: 1.5em 1em 2em;
+  padding: 1.5em 1em;
 }
 
 .navbar-inverse { 
@@ -192,7 +192,7 @@ aside {
   @include hero; 
 }
 
-.center { 
+.center, table .center { 
   text-align: center; 
 }
 
@@ -319,7 +319,36 @@ aside {
   display: none; 
 }
 
-/* User Stats (Following, Shares etc) */
+/* General tables */
+
+table {
+  clear: both;
+  @include tables-shadow;
+}
+
+thead { 
+  @include footer;
+}
+
+tbody {
+  background-color: $innerBody;
+}
+
+th, td {
+  text-align: center;
+}
+
+td {
+  width: 10%;
+  &:first-child {
+    width: 50%;
+  }
+  &:last-child {
+    width: 100%;
+  }
+}
+
+/* User Stats  */
 
 .stats, 
 .share-stats {

@@ -1,5 +1,15 @@
-<% unless @topics.empty? %>
-  <% @topics.each do |topic| %>
-    <%= link_to topic.title, board_topic_path(topic) %> <hr>
-  <% end %>
-<% end %>
+<h2 class="lead"> <%= link_to @board.name, @board %> </h2>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Topics</th>
+      <th class="center">Replies</th>
+      <th class="center">Views</th>
+      <th>Last Post</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @topics unless @topics.empty? %>
+  </tbody>
+</table>

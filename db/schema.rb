@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130220121542) do
+ActiveRecord::Schema.define(:version => 20130221080709) do
 
   create_table "boards", :force => true do |t|
     t.integer "category_id"
@@ -44,8 +44,9 @@ ActiveRecord::Schema.define(:version => 20130220121542) do
     t.integer  "board_id"
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "views",      :default => 0
   end
 
   add_index "topics", ["board_id"], :name => "index_topics_on_board_id"
