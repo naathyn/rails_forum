@@ -116,7 +116,7 @@ li {
 footer {
   clear: both;
   margin: 0px auto;
-  max-width: 750px;
+  max-width: 880px;
   padding: 1em;
   border: 1px solid $userBorder;
   color: $grayLight;
@@ -190,10 +190,6 @@ aside {
 
 .navbar .gravatar { 
   @include hero; 
-}
-
-.center, table .center { 
-  text-align: center; 
 }
 
 .tooltip {
@@ -346,6 +342,14 @@ td {
   &:last-child {
     width: 100%;
   }
+}
+
+.center, table .center { 
+  text-align: center; 
+}
+
+.small, table .small {
+  font-size: 12px;
 }
 
 /* User Stats  */

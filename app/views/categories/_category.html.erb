@@ -1,6 +1,7 @@
 <div class="well-header">
   <%= category.name %>
   </div>
-  <%= render category.boards %>
+  <%= render partial: category.boards, 
+      locals: { category: category } %>
   <div class="well-bottom">
 </div>

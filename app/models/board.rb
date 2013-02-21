@@ -1,4 +1,5 @@
 class Board < ActiveRecord::Base
+  include BoardsHelper
   attr_accessible :description, :name
   belongs_to :category
 
@@ -6,8 +7,4 @@ class Board < ActiveRecord::Base
   has_many :comments, through: :topics
 
   validates_presence_of :category_id, :description, :name
-
-  def latest_post
-    comments.sort_by(&:updated_at).last || topics.sort_by(&:updated_at).last
-  end
 end

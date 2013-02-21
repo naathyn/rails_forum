@@ -1,4 +1,5 @@
 class Topic < ActiveRecord::Base
+  include TopicsHelper
   attr_accessible :content, :title, :views, :board_id
 
   belongs_to :user
@@ -6,8 +7,4 @@ class Topic < ActiveRecord::Base
 
   has_many :comments, dependent: :destroy
   validates_presence_of :board_id, :user_id, :content, :title
-
-  def latest_post
-    comments.sort_by(&:updated_at).last || self.sort_by(&:updated_at).last
-  end
 end

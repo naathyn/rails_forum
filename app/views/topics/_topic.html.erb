@@ -1,18 +1,23 @@
 <tr>
+
   <td>
-    <%= link_to topic.title, board_topic_path(topic) %>
-    <div style="font-size: 12px;">
-      by <%= link_to topic.user.username, board_topic_path(topic) %> » 
-      <%= time_ago_in_words(topic.created_at) %> ago
+    <%= link_to topic.title, topic_path([@board, :topics, topic]) %>
+    <div class="small">
+      by <%= link_to topic.user.username, topic_path([@board, :topics, topic]) %>
+       » <%= time_ago_in_words(topic.created_at) %> ago
     </div>
   </td>
-  <td class="center"><%= topic.comments.count %></td>
-  <td class="center"><%= topic.views %></td>
-  <td>by 
+
+  <td class="center small"><%= topic.comments.count %></td>
+  <td class="center small"><%= topic.views %></td>
+
+  <td class="small">by 
     <span class="user">
-      <%= topic.latest_post.user.username %>
+      <%= link_to topic.latest_post.user.username, :root %>
     </span> 
-      <br />
-    <%= time_ago_in_words(topic.latest_post.created_at) %> ago
+    <div>
+      <%= time_ago_in_words(topic.latest_post.created_at) %> ago
+    </div>
   </td>
+
 </tr>
