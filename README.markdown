@@ -1,8 +1,7 @@
 Rails Forum, So Great
-
 ============
 
-A simple forum in development.
+### A simple forum in development. ###
 
 * * *
 
