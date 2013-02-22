@@ -10,6 +10,6 @@ class Topic < ActiveRecord::Base
   default_scope order: 'updated_at DESC'
 
   def latest_comment
-    comments.sort_by(&:updated_at).last || self
+    comments.last || self
   end
 end

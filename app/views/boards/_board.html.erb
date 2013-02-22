@@ -8,16 +8,12 @@
   <td class="center small valign"><%= board.topics.count %></td>
   <td class="center small valign"><%= board.posts %></td>
 
-  <td class="small">
+  <td class="valign small">
     <% unless board.topics.empty? %>
       <span class="user">
-        <%= link_to board.latest_post.title %>
-      </span> <br /> 
-        by
-      <span class="user">
-       <%= link_to board.latest_post.user.username, :root %> 
-      </span>
-      <%= time_ago_in_words(board.latest_post.created_at) %> ago.
+        <%= link_to board.latest_post.title, topic_path([board, :topics, board.latest_post]) %>
+      </span> 
+      » <%= time_ago_in_words(board.latest_post.updated_at) %> ago.
     <% end %>
   </td>
 

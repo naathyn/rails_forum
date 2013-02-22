@@ -4,9 +4,6 @@ Forum::Application.routes.draw do
   resources :boards, :only => :show do
     resources :topics, :except => :index
   end
-  resources :topics, :only => :show do
-    resources :comments
-  end
 
   root :to => 'categories#index'
 

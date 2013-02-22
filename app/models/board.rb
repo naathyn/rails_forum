@@ -12,7 +12,6 @@ class Board < ActiveRecord::Base
   end
 
   def latest_post
-    latest_post = topics.sort_by(&:updated_at) + comments.sort_by(&:updated_at)
-    latest_post.sort_by(&:updated_at).last
+    [topics.first, comments.first].first
   end
 end
