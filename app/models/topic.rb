@@ -1,5 +1,4 @@
 class Topic < ActiveRecord::Base
-  include TopicsHelper
   attr_accessible :content, :title, :views, :board_id
 
   belongs_to :user
@@ -9,4 +8,8 @@ class Topic < ActiveRecord::Base
   validates_presence_of :board_id, :user_id, :content, :title
 
   default_scope order: 'updated_at DESC'
+
+  def latest_comment
+    comments.sort_by(&:updated_at).last || self
+  end
 end

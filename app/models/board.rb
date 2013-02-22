@@ -1,5 +1,4 @@
 class Board < ActiveRecord::Base
-  include BoardsHelper
   attr_accessible :description, :name
   belongs_to :category
 
@@ -10,5 +9,10 @@ class Board < ActiveRecord::Base
 
   def posts
     topics.count + comments.count
+  end
+
+  def latest_post
+    latest_post = topics.sort_by(&:updated_at) + comments.sort_by(&:updated_at)
+    latest_post.sort_by(&:updated_at).last
   end
 end
