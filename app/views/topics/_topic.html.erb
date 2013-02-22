@@ -13,7 +13,7 @@
 
   <td class="small">by 
     <span class="user">
-      <%= link_to topic.latest_comment.user.username, :root %>
+      <%= link_to topic.latest_comment.user.username %>
     </span> 
     <div>
       <%= time_ago_in_words(topic.latest_comment.created_at) %> ago

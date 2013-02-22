@@ -33,6 +33,7 @@ private
 
   def increment_view_count
     @topic = Topic.find(params[:id])
+    Topic.record_timestamps = false
     @topic.increment!(:views)
   end
 end
