@@ -59,10 +59,10 @@ puts "CREATING TOPICS"
   )
 
   topic = user1.topics.create!(
-            board_id: board2.id,
-            title: "New Here",
-            content: "Look forward to meeting you all."
-          )
+    board_id: board2.id,
+    title: "New Here",
+    content: "Look forward to meeting you all."
+  )
 
 puts "CREATING COMMENTS"
 
