@@ -11,7 +11,19 @@ class Board < ActiveRecord::Base
     topics.count + comments.count
   end
 
+  def latest_topic
+    topics.first
+  end
+
+  def latest_comment
+    comments.first
+  end
+
   def latest_post
-    [topics.first, comments.first].first
+    if latest_topic.comments.any?
+      latest_comment
+    else
+      latest_topic
+    end
   end
 end

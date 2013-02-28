@@ -173,7 +173,7 @@ aside {
   min-height: 100%;
   max-width: 880px;
   margin: -1.4em auto;
-  padding: 1.5em 1em;
+  padding: 2.5em 1em;
 }
 
 .navbar-inverse { 
@@ -224,13 +224,13 @@ aside {
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: -1px;
-  padding-top: 7px;
+  padding-top: 8px;
   font-weight: bold;
   line-height: 1;
-  color: $white;
+  color: darken($linkColor, 5%);
   @include transitions;
   &:hover {
-    color: $linkColor;
+    color: $white;
   }
 }
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130221080709) do
+ActiveRecord::Schema.define(:version => 20130228024332) do
 
   create_table "boards", :force => true do |t|
     t.integer "category_id"
@@ -58,8 +58,9 @@ ActiveRecord::Schema.define(:version => 20130221080709) do
     t.string   "username"
     t.string   "password_digest"
     t.string   "remember_token"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.boolean  "admin",           :default => false
   end
 
   add_index "users", ["email", "username"], :name => "index_users_on_email_and_username"

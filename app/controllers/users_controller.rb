@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome, and enjoy your stay!"
       redirect_to :root
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -27,9 +27,9 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes(params[:user])
       sign_in @user
-      redirect_to(@user, notice: "Profile updated successfully")
+      redirect_to :root, notice: "Profile updated successfully"
     else
-      render 'edit'
+      render :edit
     end
   end
 
