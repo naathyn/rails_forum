@@ -3,11 +3,10 @@ source 'https://rubygems.org/'
 gem 'rails', '3.2.12'
 gem 'thin'
 gem 'bcrypt-ruby'
+gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-gem 'jquery-rails'
-gem 'rails_autolink'
 
 group :development, :test do
   gem 'sqlite3'
@@ -17,7 +16,7 @@ group :development, :test do
   gem 'guard-spork'
   gem 'spork'
   gem 'libnotify'
-  gem 'rb-inotify', :require => false
+  gem 'rb-inotify', require: false
 end
 
 group :assets do
