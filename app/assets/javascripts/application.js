@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require navigation
 //= require bootstrap-transition
+//= require bootstrap-alert
 //= require bootstrap-dropdown
+//= require bootstrap-button
+//= require bootstrap-collapse
