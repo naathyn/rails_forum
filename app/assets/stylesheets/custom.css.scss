@@ -217,11 +217,12 @@ aside {
   padding: 6px 15px; 
 }
 
-#logo {
+/* Logo configuration */
+
+#logo, #logo_lite, #logo_board {
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, .15);
   float: left;
-  margin-right: 1em;
   font-size: 1.7em;
-  text-transform: uppercase;
   text-decoration: none;
   letter-spacing: -1px;
   padding-top: 8px;
@@ -229,9 +230,33 @@ aside {
   line-height: 1;
   color: darken($linkColor, 5%);
   @include transitions;
-  &:hover {
-    color: $white;
-  }
+}
+
+#logo:hover, #logo_board:hover {
+  opacity: 1;
+}
+
+#logo {
+  opacity: 0.8;
+}
+
+#logo_board {
+  opacity: 0.8;
+}
+
+#logo_board {
+  margin-right: 1.6em;
+}
+
+#logo_lite:hover {
+  color: $white;
+  margin-right: 6px;
+  margin-left: 3px;
+}
+
+#logo.opaque, #logo_board.opaque {
+  opacity: 0.7;
+  letter-spacing: 2px;
 }
 
 /* Mini-Profile Module */

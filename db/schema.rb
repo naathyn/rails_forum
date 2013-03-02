@@ -14,17 +14,23 @@
 ActiveRecord::Schema.define(:version => 20130228024332) do
 
   create_table "boards", :force => true do |t|
-    t.integer "category_id"
-    t.string  "name"
-    t.string  "description"
+    t.integer  "category_id"
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "boards", ["category_id"], :name => "index_boards_on_category_id"
+  add_index "boards", ["created_at"], :name => "index_boards_on_created_at"
 
   create_table "categories", :force => true do |t|
-    t.string "name"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
+  add_index "categories", ["created_at"], :name => "index_categories_on_created_at"
   add_index "categories", ["name"], :name => "index_categories_on_name", :unique => true
 
   create_table "comments", :force => true do |t|
